@@ -1,0 +1,315 @@
+// Урок 2 № 1
+
+uses FormsABC;
+begin 
+  MainForm.Title:='Пример формы';
+  MainForm.SetSize(300, 300);
+  MainForm.CenterOnScreen;
+end.
+
+// Урок 2 № 2
+
+uses FormsABC;
+var 
+pushButton: Button;
+procedure PrintHello();
+begin
+  writeln('Hello');
+end;
+begin 
+  MainForm.Title:='Пример формы';
+  MainForm.SetSize(300, 300);
+  MainForm.CenterOnScreen;
+  pushButton:=new Button('Say Hello');
+  pushButton.Width:=200;
+  pushButton.Click += PrintHello;
+end.
+
+// Урок 2 № 3
+
+uses FormsABC;
+var 
+pushButton: Button;
+f: FlowBreak;
+s: Space;
+procedure PrintHello();
+begin
+  writeln('Hello');
+end;
+begin 
+  MainForm.Title:='Пример формы';
+  MainForm.SetSize(300, 300);
+  MainForm.CenterOnScreen;
+  f:=new FlowBreak(90);
+  s:=new Space(30);
+  pushButton:=new Button('Say Hello');
+  pushButton.Width:=200;
+  pushButton.Click += PrintHello;
+end.
+
+// Урок 2 № 4
+
+uses FormsABC;
+var 
+pushButton: Button;
+pushButton1: Button;
+f: FlowBreak;
+s: Space;
+procedure PrintHello();
+begin
+  writeln('Hello');
+end;
+procedure PrintGoodBye();
+begin
+writeln('Good Bye');
+begin 
+  MainForm.Title:='Пример формы';
+  MainForm.SetSize(300, 300);
+  MainForm.CenterOnScreen;
+  f:=new FlowBreak(90);
+  s:=new Space(30);
+  pushButton:=new Button('Say Hello');
+  pushButton.Width:=200;
+  pushButton.Click += PrintHello;
+  f:= new FlowBreak(30);
+  s:= new Space(30);
+  pushButton1:=new Button('Say Good Bye');
+  pushButton1.Width:=200;
+  pushButton1.Click += PrintGoodBye;
+end.
+
+// Урок 2 № 4
+
+uses FormsABC;
+var 
+pushButton: Button;
+pushButton1: Button;
+f: FlowBreak;
+s: Space;
+procedure PrintHello();
+begin
+  writeln('Hello');
+end;
+procedure PrintGoodBye();
+begin
+writeln('Good Bye');
+begin 
+  MainForm.Title:='Пример формы';
+  MainForm.SetSize(300, 300);
+  MainForm.CenterOnScreen;
+  f:=new FlowBreak(90);
+  s:=new Space(30);
+  pushButton:=new Button('Say Hello');
+  pushButton.Width:=200;
+  pushButton.Click += PrintHello;
+  f:= new FlowBreak(30);
+  s:= new Space(30);
+  pushButton1:=new Button('Say Good Bye');
+  pushButton1.Width:=200;
+  pushButton1.Click += PrintGoodBye;
+end.
+
+// Урок 2 № 5
+
+uses FormsABC;
+var
+minbutton: Button; 
+maxbutton: Button;
+f: FlowBreak;
+s: Space;
+procedure Maximize();
+begin
+MainForm.Maximize;
+end;
+procedure Minimize;
+begin
+MainForm.Minimize;
+end;
+begin
+  MainForm. Title:='Форма с двумя кнопками';
+  MainForm. SetSize (300, 300);
+  MainForm. CenterOnScreen;
+  f:=new FlowBreak (50);
+  s: =new Space (30);
+  maxbutton:=new Button ('Maximize form');
+  maxbutton.Width:=200;
+  maxbutton.Click += Maximize;
+  f: =new FlowBreak(50);
+  s: =new Space (30);
+  minbutton:=new Button ('Minimize form'); 
+  minbutton.Width:=200;
+  minbutton.Click += Minimize;
+end.
+
+// Урок 2 № 6
+
+1 - Г; 2 - Е; 3 - Д; 4 - Ж; 5 - В; 6 - З; 7 - А; 8 - Б;
+
+// Урок 3 № 1
+
+uses FormsABC;
+var pushbutton: Button; 
+pushbutton1: Button;
+f: FlowBreak;
+s: Space;
+Message: TextBox;
+procedure PrintHello();
+begin
+Message.AddLine('Hello!');
+end;
+procedure PrintGoodBye();
+begin
+Message. AddLine('GoodBye!');
+end;
+begin
+  MainForm.Title:='Пример формы';
+  MainForm.SetSize (300, 300);
+  MainForm. CenterOnscreen;
+  f:=new FlowBreak(50);
+  s:=new Space(30);
+  pushButton:=new Button('Say Hello');
+  pushButton.Width:=200; 
+  pushButton.Click += PrintHello; 
+  f:=new FlowBreak(10);
+  s:=new Space (30);
+  pushButton1:=new Button('Say Good bye');
+  pushButton1.Width:=200; 
+  pushButton1.Click += PrintGoodBye;
+  f:=new FlowBreak(20);
+  Message := new TextBox();
+  Message.Width := 275;
+  Message. Height := 100;
+end.
+
+// Урок 3 № 2
+
+uses FormsABC;
+var pushbutton: Button;
+pushbutton1: Button;
+f: FlowBreak;
+s: Space;
+Message: TextBox; 
+rus, eng: RadioButton; 
+procedure PrintHello();
+begin
+  if (eng. checked) then Message.AddLine('Hello!'); 
+  if (rus.checked) then Message. AddLine('Привет!'); 
+end;
+procedure PrintGoodBye();
+begin
+  if (eng. checked) then Message. AddLine('Good Bye!'); 
+  if (rus. checked) then Message.AddLine('Пока!');
+end;
+begin
+  MainForm. Title:='Пример формы";
+  MainForm. SetSize(300, 300);
+  MainForm. CenterOnScreen;
+  f: =new FlowBreak(20);
+  s: =new Space(30);
+  pushButton:=new Button('Say Hello');
+  pushButton.Width:=200;
+  pushButton.Click += PrintHello;
+  f: =new FlowBreak(10);
+  s: =new Space(30);
+  pushButton1: =new Button('Say Good bye'); 
+  pushButton1.Width:=200;
+  pushButton1.Click += PrintGoodBye; 
+  f:= new FlowBreak(10);
+  s: =new Space(60); 
+  rus:= new RadioButton('Russian');
+  eng: = new RadioButton('English');
+  f:=new FlowBreak(20);
+  Message:= new TextBox();
+  Message.Width:= 275;
+  Message.Height:= 100;
+end.
+
+// Урок 3 № 3
+
+uses FormsABC;
+var pushbutton: Button; 
+pushbutton1: Button;
+f: FlowBreak;
+s: Space;
+Message: TextBox; rus, eng: RadioButton;
+t: TextLabel; procedure PrintHello();
+begin
+  if (eng. checked) then Message. AddLine ('Hello!'); 
+  if (rus. checked) then Message.AddLine ('Привет!');
+end;
+procedure PrintGoodBye();
+begin
+  if (eng. checked) then Message. AddLine ('Good Bye!');
+  if (rus. checked) then Message. AddLine ('Пока!"); 
+end;
+begin
+  MainForm. Title:='Пример формы';
+  MainForm. SetSize (300, 300);
+  MainForm. CenterOnScreen;
+  f:=new FlowBreak(20);
+  s:=new Space (30);
+  pushButton: =new Button('Say Hello'); 
+  pushButton.Width:=200;
+  pushButton.Click += PrintHello; 
+  f:=new FlowBreak (10); 
+  s:=new Space(30);
+  pushButton1:=new Button('Say Good bye');
+  pushButton1.Width:=200;
+  pushButton1.Click += PrintGoodBye;
+  s:= new Space(40); 
+  t: = new TextLabel( 'Формы приветствия и прощания: ");
+  f:= new FlowBreak(10);
+  s:=new Space Space(60);
+  rus:= new RadioButton( 'Russian');
+  eng:= new RadioButton ('English');
+  f:=new FlowBreak (20);
+  Message:= new TextBox();
+  Message.Width:= 275;
+  Message.Height:= 100;
+end.
+
+// Урок 3 № 4
+
+uses FormsABC;
+var
+minbutton: Button;
+maxbutton: Button;
+f: FlowBreak;
+s: Space;
+closeButton: Button;
+procedure Maximize();
+begin
+MainForm.Maximize;
+end;
+procedure.Minimize;
+begin
+MainForm.Minimize;
+end;
+procedure.ToExit();
+begin
+MainForm.Close();
+end;
+begin
+  MainForm.Title:='Форма с тремя кнопками';
+  MainForm.SetSize(300, 300);
+  MainForm.CenterOnScreen;
+  f:=new FlowBreak (50);
+  s:=new Space (30);
+  maxbutton: =new Button('Maximize form'); 
+  maxbutton.Width:=200;
+  maxbutton.Click += Maximize;
+  f:=new FlowBreak(50);
+  s:=new Space(30);
+  minbutton:=new Button ('Minimize form'); 
+  minbutton.Width:=200;
+  minbutton.Click += Minimize;
+  f:=new FlowBreak (30);
+  s:=new Space(30);
+  closeButton: = new Button('Exit');
+  closeButton.Width:= 200;
+  closeButton.Click += ToExit;
+end.
+
+// Урок 3 № 5
+
+1 - Г; 2 - В; 3 - Е; 4 - А; 5 - Б; 6 - Д;
